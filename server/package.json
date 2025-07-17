@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.mts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "argon2": "^0.43.1",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.1.0",
+    "isemail": "^3.2.0",
+    "mongodb": "^6.17.0",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3"
+  }
+}
