@@ -12,7 +12,12 @@ import isemail from 'isemail';
 
 // initialisation des services
 const client = await MongoClient.connect('mongodb://127.0.0.1:21664');
-const collection = client.db('bonx').collection('user');
+const db = client.db('bonx');
+const existingCollections = await db.listCollections().toArray();
+if (!existingCollections.some(infos => infos.name === 'user')) {
+  await db.createCollection('user');
+}
+const collection = db.collection('user');
 
 if (!(await collection.indexExists('unique_email'))) {
   console.log('creating index to avoid multiple account with same email');
