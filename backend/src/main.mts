@@ -121,9 +121,9 @@ app.get('/login', (req: any, res, next) => {
 });
 
 // on sert l'app
-app.use(express.static('../bonx-login/dist')); // assets & co
+app.use(express.static('../frontend/dist')); // assets & co
 app.use('/*splat', (req, res, next) => {
-  res.sendFile(resolve('../bonx-login/dist', 'index.html')); // fallback pour toujours servir notre index.html
+  res.sendFile(resolve('../frontend/dist', 'index.html')); // fallback pour toujours servir notre index.html
 });
 
 // on démarre le serveur
